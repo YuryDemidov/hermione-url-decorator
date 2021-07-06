@@ -1,0 +1,1 @@
+"use strict";var URI=require("urijs");module.exports=function(hermione,options){hermione.on(hermione.events.NEW_BROWSER,function(browser){browser.overwriteCommand("url",function(originalUrlFn,uri){uri=uri?new URI(uri).addQuery(options.query).toString():uri;return originalUrlFn(uri)})})};
